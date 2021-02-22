@@ -1,5 +1,5 @@
 # Calculator
-Stand: https://calculator-d8xlr3xuv-grroma.vercel.app/
+Stand: https://calculator-teal.vercel.app/
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.5.
 
