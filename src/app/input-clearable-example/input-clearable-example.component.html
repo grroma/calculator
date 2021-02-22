@@ -1,29 +1,27 @@
 <mat-form-field class="example-form-field">
-    <mat-label>Первая величина</mat-label>
-    <input matInput type="number" [(ngModel)]="valueOne">
+    <mat-label>Скорость инфузии, [мл/чac]</mat-label>
+    <input matInput type="number" min="0" [(ngModel)]="infusionRate">
     <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
         <mat-icon>close</mat-icon>
     </button>
 </mat-form-field>
 <br>
 <mat-form-field class="example-form-field">
-    <mat-label>Вторая величина</mat-label>
-    <input matInput type="number" [(ngModel)]="valueTwo">
+    <mat-label>Время инфузии, [чac]</mat-label>
+    <input matInput type="number" min="0" [(ngModel)]="infusionTime">
     <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
         <mat-icon>close</mat-icon>
     </button>
 </mat-form-field>
 <br>
 <mat-form-field class="example-form-field">
-    <mat-label>Третья величина</mat-label>
-    <input matInput type="number" [(ngModel)]="valueTree">
+    <mat-label>Дозировка [мл]</mat-label>
+    <input matInput type="number" min="0" [(ngModel)]="dosage">
     <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
         <mat-icon>close</mat-icon>
     </button>
 </mat-form-field>
 <br>
-<p>The sum of the values is: {{valueOne*1 * valueTwo*1}}</p>
-<mat-form-field appearance="outline">
-    <mat-label>Вторая величина</mat-label>
-    <input matInput type="number" [(ngModel)]="valueTwo * valueOne" readonly>
-</mat-form-field>
+<p>Общий объем инфузии: {{infusionRate*1 * infusionTime*1}} [мл]</p> 
+<p>Объем препарата: {{dosage*0.02}} [мл]</p>
+<p>Объем NaCl: {{(infusionRate*1 * infusionTime*1) - dosage*0.02}} [мл]</p>

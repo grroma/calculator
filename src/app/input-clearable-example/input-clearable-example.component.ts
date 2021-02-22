@@ -8,9 +8,9 @@ import { Component, OnInit } from '@angular/core';
 
 export class InputClearableExampleComponent implements OnInit {
 
-  valueOne: any;
-  valueTwo: any;
-  valueTree: any;
+  infusionRate: any;
+  infusionTime: any;
+  dosage: any;
   value = "Clear me";
   
   constructor() { }

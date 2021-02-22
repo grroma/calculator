@@ -122,5 +122,8 @@
       }
     }
   },
-  "defaultProject": "calculator"
+  "defaultProject": "calculator",
+  "cli": {
+    "analytics": "4566b2c6-2c1c-463f-afcc-61813a482b19"
+  }
 }
