@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { InputClearableExampleComponent } from './input-clearable-example/input-clearable-example.component';
 
 @Component({
   selector: 'app-root',
