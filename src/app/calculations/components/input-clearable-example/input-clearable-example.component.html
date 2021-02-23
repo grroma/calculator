@@ -1,0 +1,61 @@
+<mat-form-field class="example-form-field"
+    appearance="outline">
+    <mat-label>5-фторурацил</mat-label>
+    <input
+    matInput
+    readonly 
+    >
+</mat-form-field>
+<br>
+    <mat-form-field class="example-form-field">
+        <mat-label>Скорость инфузии, [мл/чac]</mat-label>
+        <input
+        [formControl]="infusionRateControl"
+        formControlName="infusionRate" 
+        matInput type="number"
+        min="0" 
+        >
+        <button
+        mat-button
+        matSuffix
+        mat-icon-button
+        (click)="clearInfusionRate()">
+        <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+<br>
+    <mat-form-field class="example-form-field">
+        <mat-label>Время инфузии, [чac]</mat-label>
+        <input
+        [formControl]="infusionTimeControl"
+        matInput type="number"
+        min="0" 
+        >
+        <button
+        mat-button
+        matSuffix
+        mat-icon-button
+        (click)="clearInfusionTime()">
+        <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+<br>
+    <mat-form-field class="example-form-field">
+        <mat-label>Дозировка, [мг]</mat-label>
+        <input
+        [formControl]="dosageControl" 
+        matInput type="number"
+        min="0" 
+        >
+        <button
+        mat-button
+        matSuffix
+        mat-icon-button
+        (click)="clearDosage()">
+        <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+<br>
+<p>Общий объем инфузии: {{infusionRateControl.value * infusionTimeControl.value}} [мл]</p> 
+<p>Объем препарата: {{dosageControl.value*0.02}} [мл]</p>
+<p>Объем NaCl: {{(infusionRateControl.value * infusionTimeControl.value) - dosageControl.value*0.02}} [мл]</p>
